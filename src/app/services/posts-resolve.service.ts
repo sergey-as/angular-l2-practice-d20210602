@@ -3,19 +3,19 @@ import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from "@angular/rou
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
-import {User} from "../models";
+import {Post} from "../models";
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class UsersResolveService implements Resolve<User[]> {
+export class PostsResolveService implements Resolve<Post[]> {
 
   constructor(private httpClient: HttpClient) {
   }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<User[]> | Promise<User[]> | User[] {
-    return this.httpClient.get<User[]>('https://jsonplaceholder.typicode.com/users');
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Post[]> | Promise<Post[]> | Post[] {
+    return this.httpClient.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
   }
 
 }

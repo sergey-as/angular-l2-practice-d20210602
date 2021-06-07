@@ -1,0 +1,24 @@
+<!--<p>-->
+<!--  {{fullUser | json}}-->
+<!--</p>-->
+
+<div>
+  <p>{{'id:'}} {{fullUser.id}}</p>
+  <p>{{'name:'}} {{fullUser.name}}</p>
+  <p>{{'username:'}} {{fullUser.username}}</p>
+  <p>{{'email:'}} {{fullUser.email}}</p>
+  <p>{{'address:'}}</p>
+  <p>{{'    street:'}} {{fullUser.address.street}}</p>
+  <p>{{'    suite:'}} {{fullUser.address.suite}}</p>
+  <p>{{'    city:'}} {{fullUser.address.city}}</p>
+  <p>{{'    zipcode:'}} {{fullUser.address.zipcode}}</p>
+  <p>{{'    geo:'}}</p>
+  <p>{{'         lat:'}} {{fullUser.address.geo.lat}}</p>
+  <p>{{'         lng:'}} {{fullUser.address.geo.lng}}</p>
+  <p>{{'phone:'}} {{fullUser.phone}}</p>
+  <p>{{'website:'}} {{fullUser.website}}</p>
+  <p>{{'company:'}}</p>
+  <p>{{'    name:'}} {{fullUser.company.name}}</p>
+  <p>{{'    catchPhrase:'}} {{fullUser.company.catchPhrase}}</p>
+  <p>{{'    bs:'}} {{fullUser.company.bs}}</p>
+</div>

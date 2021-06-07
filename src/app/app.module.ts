@@ -4,22 +4,29 @@ import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
 
 import {AppComponent} from './app.component';
-import {PostComponent, PostsComponent, UserComponent, UsersComponent} from './components';
-import {UserResolveService, UsersResolveService} from "./services";
+import {
+  PostComponent,
+  PostDetailsComponent,
+  PostsComponent,
+  UserComponent,
+  UserDetailsComponent,
+  UsersComponent
+} from './components';
+import {PostsResolveService, UsersResolveService} from "./services";
 
 let routes: Routes = [
   {
     path: 'users', component: UsersComponent,
-    resolve: {xxx1: UsersResolveService},
+    resolve: {usersResolve: UsersResolveService},
     children: [
-      {path: ':id', component: UserComponent,
-      resolve: {xxx2: UserResolveService}
-      }
+      {path: ':id', component: UserDetailsComponent}
     ]
   },
-  {path: 'posts', component: PostsComponent,
+  {
+    path: 'posts', component: PostsComponent,
+    resolve: {postsResolve: PostsResolveService},
     children: [
-      {path: ':id', component: PostComponent}
+      {path: ':id', component: PostDetailsComponent}
     ]
   },
 ];
@@ -30,7 +37,9 @@ let routes: Routes = [
     UsersComponent,
     UserComponent,
     PostsComponent,
-    PostComponent
+    PostComponent,
+    UserDetailsComponent,
+    PostDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -40,4 +49,5 @@ let routes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

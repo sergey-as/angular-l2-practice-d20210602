@@ -1,2 +1,2 @@
 export * from './users-resolve.service';
-export * from './user-resolve.service';
+export * from './posts-resolve.service';

@@ -1,0 +1,10 @@
+
+.content {
+  background: lightsteelblue;
+  display: flex;
+  width: 100%;
+}
+
+.subContent {
+  width: 50%;
+}
